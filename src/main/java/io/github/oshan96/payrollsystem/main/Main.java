@@ -33,6 +33,8 @@ public class Main extends Application {
         stage.getScene().getRoot().setOnMouseClicked(e->stage.dynamicDrawerEvent(NavigationType.LEFT));
 
         stage.show();
+
+
     }
 
     public static void main(String[] args) {

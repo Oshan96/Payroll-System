@@ -5,10 +5,13 @@ import io.github.oshan96.payrollsystem.db.controller.DBController;
 import io.github.oshan96.payrollsystem.model.db.Post;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author oshan
@@ -66,4 +69,17 @@ public class PostController implements DBController<Post> {
 
         return stm.executeUpdate()>0;
     }
+
+    public List<String> getIDs() throws Exception {
+        List<String> ids = new ArrayList<>();
+        String sql = "SELECT pid FROM post";
+        PreparedStatement stm = connection.prepareStatement(sql);
+
+        ResultSet rst = stm.executeQuery();
+        while(rst.next())
+            ids.add(rst.getString(1));
+
+        return ids;
+    }
+
 }

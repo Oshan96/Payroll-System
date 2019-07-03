@@ -5,10 +5,13 @@ import io.github.oshan96.payrollsystem.db.controller.DBController;
 import io.github.oshan96.payrollsystem.model.db.Employee;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author oshan
@@ -77,4 +80,50 @@ public class EmployeeController implements DBController<Employee> {
 
         return stm.executeUpdate()>0;
     }
+
+    public List<Employee> getEmployeesBelow(double salary) throws Exception {
+        List<Employee> employees = new ArrayList<>();
+        String sql = "SELECT employee.id,name,address,nic,dob FROM employee,post WHERE basicSalary < ? AND employee.pid = post.pid";
+        PreparedStatement stm = connection.prepareStatement(sql);
+        stm.setObject(1,salary);
+
+        ResultSet rs = stm.executeQuery();
+
+        while (rs.next())
+            employees.add(
+              new Employee(
+                      rs.getString(1),
+                      rs.getString(2),
+                      rs.getString(3),
+                      rs.getString(4),
+                      rs.getString(5)
+              )
+            );
+
+        return employees;
+    }
+
+    public List<Employee> getEmployeesAbove(double salary) throws Exception {
+        List<Employee> employees = new ArrayList<>();
+        String sql = "SELECT employee.id,name,address,nic,dob FROM employee,post WHERE basicSalary >= ? AND employee.pid = post.pid";
+        PreparedStatement stm = connection.prepareStatement(sql);
+        stm.setObject(1,salary);
+
+        ResultSet rs = stm.executeQuery();
+
+        while (rs.next())
+            employees.add(
+                    new Employee(
+                            rs.getString(1),
+                            rs.getString(2),
+                            rs.getString(3),
+                            rs.getString(4),
+                            rs.getString(5)
+                    )
+            );
+
+        return employees;
+    }
+
+
 }

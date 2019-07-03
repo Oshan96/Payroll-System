@@ -1,6 +1,7 @@
 package io.github.oshan96.payrollsystem.db.util.idGenerator;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 
 /**
@@ -12,6 +13,8 @@ public class IDGenerator {
         try {
             lastId = IDController.getLastID(tblName, colName);
         } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
             e.printStackTrace();
         }
         String newId;

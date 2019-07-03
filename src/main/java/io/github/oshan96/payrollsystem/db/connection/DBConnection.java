@@ -4,6 +4,8 @@ package io.github.oshan96.payrollsystem.db.connection;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -18,20 +20,8 @@ public class DBConnection {
 
     private DBConnection() throws ClassNotFoundException, SQLException, IOException {
         Class.forName("com.mysql.jdbc.Driver");
-        Properties dbProperties = new Properties();
-        File configFile = new File("config/dbconfig.properties");
-        FileReader reader = new FileReader(configFile);
-        dbProperties.load(reader);
-        String strCon = String.format(
-                "jdbc:mysql://%:%/%",
-                dbProperties.getProperty("host"),
-                dbProperties.getProperty("port"),
-                dbProperties.getProperty("db")
-        );
         connection = DriverManager.getConnection(
-                strCon,
-                dbProperties.getProperty("user"),
-                dbProperties.getProperty("password")
+                "jdbc:mysql://localhost:3306/payrollsys","root","root"
         );
     }
 

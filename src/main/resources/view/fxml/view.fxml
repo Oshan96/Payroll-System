@@ -7,18 +7,18 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.oshan96.payrollsystem.view.controller.ViewController">
    <children>
       <Label layoutX="57.0" layoutY="55.0" prefHeight="30.0" prefWidth="78.0" text="Net salary" />
-      <TextField layoutX="133.0" layoutY="55.0" prefHeight="30.0" prefWidth="196.0" />
-      <ComboBox editable="true" layoutX="448.0" layoutY="57.0" prefHeight="26.0" prefWidth="242.0" visibleRowCount="2" />
-      <TableView layoutX="50.0" layoutY="135.0" prefHeight="417.0" prefWidth="700.0">
+      <TextField fx:id="txtSal" layoutX="133.0" layoutY="55.0" prefHeight="30.0" prefWidth="196.0" />
+      <ComboBox fx:id="cmb" editable="true" layoutX="448.0" layoutY="57.0" onAction="#populate" prefHeight="26.0" prefWidth="242.0" visibleRowCount="2" />
+      <TableView fx:id="tblView" layoutX="50.0" layoutY="135.0" prefHeight="417.0" prefWidth="700.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
         <columns>
-          <TableColumn prefWidth="55.20001220703125" text="Emp ID" />
-          <TableColumn prefWidth="157.60003662109375" text="Name" />
-            <TableColumn prefWidth="108.79998779296875" text="NIC" />
-            <TableColumn prefWidth="108.79998779296875" text="DOB" />
-            <TableColumn prefWidth="269.5999755859375" text="Address" />
+          <TableColumn fx:id="colId" prefWidth="81.60003662109375" text="Emp ID" />
+          <TableColumn fx:id="colName" prefWidth="132.79998779296875" text="Name" />
+            <TableColumn fx:id="colNic" prefWidth="108.79998779296875" text="NIC" />
+            <TableColumn fx:id="colDob" prefWidth="108.79998779296875" text="DOB" />
+            <TableColumn fx:id="colAdd" prefWidth="269.5999755859375" resizable="false" text="Address" />
         </columns>
       </TableView>
    </children>

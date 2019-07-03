@@ -5,16 +5,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="200.0" styleClass="nav-bar" stylesheets="@../css/stylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="400.0" prefWidth="200.0" styleClass="nav-bar" stylesheets="@../css/stylesheet.css" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.oshan96.payrollsystem.view.controller.NavController">
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Calculate Salary" />
-            <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="235.0" text="Salary comparison" />
-            <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="224.0" text="Add employee" />
-            <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="246.0" text="View employee" />
-            <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="215.0" text="Edit employee" />
-            <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="210.0" text="Delete employee" />
+            <Button fx:id="btnCal" mnemonicParsing="false" onAction="#loadView" prefHeight="30.0" prefWidth="202.0" text="Calculate Salary" />
+            <Button fx:id="btnComp" mnemonicParsing="false" onAction="#loadView" prefHeight="46.0" prefWidth="235.0" text="Salary comparison" />
+            <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#loadView" prefHeight="46.0" prefWidth="224.0" text="Add employee" />
+            <Button fx:id="btnView" mnemonicParsing="false" onAction="#loadView" prefHeight="46.0" prefWidth="246.0" text="View employee" />
+            <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#loadView" prefHeight="46.0" prefWidth="215.0" text="Edit employee" />
+            <Button fx:id="btnDel" mnemonicParsing="false" onAction="#loadView" prefHeight="46.0" prefWidth="210.0" text="Delete employee" />
          </children>
          <padding>
             <Insets top="50.0" />

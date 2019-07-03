@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.oshan96.payrollsystem.view.controller.MainController">
    <children>
       <VBox prefHeight="600.0" prefWidth="800.0">
          <children>
@@ -17,16 +17,16 @@
                   <HBox prefHeight="100.0" prefWidth="400.0">
                      <children>
                         <Label prefHeight="30.0" prefWidth="100.0" text="Employee ID" />
-                        <TextField prefWidth="200.0" />
+                        <TextField fx:id="txtId" onAction="#idAction" prefWidth="200.0" />
                      </children>
                      <padding>
                         <Insets left="30.0" top="30.0" />
                      </padding>
                   </HBox>
-                  <HBox prefHeight="100.0" prefWidth="400.0">
+                  <HBox prefHeight="100.0" prefWidth="445.0">
                      <children>
-                        <Label prefHeight="30.0" prefWidth="100.0" text="Overtime hours" />
-                        <TextField prefWidth="200.0" />
+                        <Label prefHeight="30.0" prefWidth="113.0" text="Overtime hours" />
+                        <TextField fx:id="txtHours" onAction="#calculateSalary" prefWidth="200.0" />
                      </children>
                      <padding>
                         <Insets left="30.0" top="30.0" />
@@ -39,7 +39,7 @@
                   <HBox prefHeight="100.0" prefWidth="400.0">
                      <children>
                         <Label prefHeight="30.0" prefWidth="100.0" text="Name" />
-                        <TextField editable="false" prefWidth="200.0" />
+                        <TextField fx:id="txtName" editable="false" prefWidth="200.0" />
                      </children>
                      <padding>
                         <Insets left="30.0" top="30.0" />
@@ -48,7 +48,7 @@
                   <HBox prefHeight="100.0" prefWidth="400.0">
                      <children>
                         <Label prefHeight="30.0" prefWidth="100.0" text="Basic salary" />
-                        <TextField editable="false" prefWidth="200.0" />
+                        <TextField fx:id="txtBSal" editable="false" prefWidth="200.0" />
                      </children>
                      <padding>
                         <Insets left="30.0" top="30.0" />
@@ -61,16 +61,16 @@
                   <HBox prefHeight="100.0" prefWidth="400.0">
                      <children>
                         <Label prefHeight="30.0" prefWidth="100.0" text="Position" />
-                        <TextField editable="false" prefWidth="200.0" />
+                        <TextField fx:id="txtPos" editable="false" prefWidth="200.0" />
                      </children>
                      <padding>
                         <Insets left="30.0" top="30.0" />
                      </padding>
                   </HBox>
-                  <HBox prefHeight="100.0" prefWidth="400.0">
+                  <HBox prefHeight="100.0" prefWidth="445.0">
                      <children>
-                        <Label prefHeight="30.0" prefWidth="100.0" text="Overtime payment" />
-                        <TextField editable="false" prefWidth="200.0" />
+                        <Label prefHeight="30.0" prefWidth="127.0" text="Overtime payment" />
+                        <TextField fx:id="txtOPay" editable="false" prefWidth="200.0" />
                      </children>
                      <padding>
                         <Insets left="30.0" top="30.0" />
@@ -83,7 +83,7 @@
                   <HBox prefHeight="100.0" prefWidth="400.0">
                      <children>
                         <Label prefHeight="30.0" prefWidth="100.0" text="NIC" />
-                        <TextField editable="false" prefWidth="200.0" />
+                        <TextField fx:id="txtNic" editable="false" prefWidth="200.0" />
                      </children>
                      <padding>
                         <Insets left="30.0" top="30.0" />
@@ -92,7 +92,7 @@
                   <HBox prefHeight="100.0" prefWidth="400.0">
                      <children>
                         <Label prefHeight="30.0" prefWidth="100.0" text="Total salary" />
-                        <TextField editable="false" prefWidth="200.0" />
+                        <TextField fx:id="txtTotSal" editable="false" prefWidth="200.0" />
                      </children>
                      <padding>
                         <Insets left="30.0" top="30.0" />
@@ -105,7 +105,7 @@
                   <HBox prefHeight="100.0" prefWidth="400.0">
                      <children>
                         <Label prefHeight="30.0" prefWidth="100.0" text="Date of birth" />
-                        <TextField editable="false" prefWidth="200.0" />
+                        <TextField fx:id="txtDob" editable="false" prefWidth="200.0" />
                      </children>
                      <padding>
                         <Insets left="30.0" top="30.0" />
@@ -114,7 +114,7 @@
                   <HBox prefHeight="100.0" prefWidth="400.0">
                      <children>
                         <Label prefHeight="30.0" prefWidth="100.0" text="ETF payment" />
-                        <TextField editable="false" prefWidth="200.0" />
+                        <TextField fx:id="txtEtf" editable="false" prefWidth="200.0" />
                      </children>
                      <padding>
                         <Insets left="30.0" top="30.0" />
@@ -127,7 +127,7 @@
                   <HBox prefHeight="100.0" prefWidth="400.0">
                      <children>
                         <Label prefHeight="30.0" prefWidth="100.0" text="Address" />
-                        <TextArea editable="false" prefHeight="100.0" prefWidth="200.0" />
+                        <TextArea fx:id="txtAddress" editable="false" prefHeight="100.0" prefWidth="200.0" />
                      </children>
                      <padding>
                         <Insets left="30.0" top="30.0" />
@@ -136,7 +136,7 @@
                   <HBox prefHeight="100.0" prefWidth="400.0">
                      <children>
                         <Label prefHeight="30.0" prefWidth="100.0" text="Net salary" />
-                        <TextField editable="false" prefWidth="200.0" />
+                        <TextField fx:id="txtNetSal" editable="false" prefWidth="200.0" />
                      </children>
                      <padding>
                         <Insets left="30.0" top="30.0" />

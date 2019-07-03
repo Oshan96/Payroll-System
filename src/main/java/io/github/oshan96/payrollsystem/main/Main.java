@@ -24,16 +24,12 @@ public class Main extends Application {
                 .setWindowTitle("Payroll System")
                 .setWindowColor("#1769aa")
                 .setTitleColor("white")
-//                .setActionIcons(new Image("icons/title-bar/btnClose.png"),
-//                        new Image("icons/title-bar/btnMinimize.png"),
-//                        new Image("icons/title-bar/btnMaximize.png"),
-//                        new Image("icons/title-bar/btnRestore.png"))
                 .setNavigationPane(Style.DYNAMIC,NavigationType.LEFT,k,30,0,false)
                 .build();
 
         stage.getScene().getRoot().setOnMouseClicked(e->stage.dynamicDrawerEvent(NavigationType.LEFT));
 
-        stage.changeScene(CustomStage.getDefaultSceneManager().getScene("addEmp"));
+        stage.changeScene(CustomStage.getDefaultSceneManager().getScene("main"));
 
         stage.show();
 

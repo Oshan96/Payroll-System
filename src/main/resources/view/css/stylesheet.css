@@ -1,0 +1,23 @@
+.button {
+    -fx-background-color: #2979FF;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 20px;
+    -fx-border-color: darkgrey transparent transparent transparent;
+    -fx-border-style: groove;
+}
+
+.button:hover {
+    -fx-border-color: white transparent;
+    -fx-border-width: 1px;
+    -fx-border-style: groove;
+}
+
+.nav-bar {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 0 2 3 2;
+}
+
+.nav-bar > .button {
+    -fx-padding: 0 0 0 30px;
+    -fx-alignment: center-left;
+}

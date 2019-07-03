@@ -15,8 +15,9 @@ import lk.vivoxalabs.customstage.tools.Style;
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        AnchorPane nav = new AnchorPane();
-        nav.setStyle("-fx-background-color: #2196f3;");
+
+        CustomStage.getDefaultSceneManager().automate(getClass().getResource("/view/fxml/view.fxml").toURI().toURL());
+        AnchorPane k = CustomStage.getDefaultSceneManager().getScene("navbar");
 
         CustomStage stage = new CustomStageBuilder()
                 .setDimensions(200,200,1980,1024)
@@ -27,10 +28,12 @@ public class Main extends Application {
 //                        new Image("icons/title-bar/btnMinimize.png"),
 //                        new Image("icons/title-bar/btnMaximize.png"),
 //                        new Image("icons/title-bar/btnRestore.png"))
-                .setNavigationPane(Style.DYNAMIC,NavigationType.LEFT,nav,30,0,false)
+                .setNavigationPane(Style.DYNAMIC,NavigationType.LEFT,k,30,0,false)
                 .build();
 
         stage.getScene().getRoot().setOnMouseClicked(e->stage.dynamicDrawerEvent(NavigationType.LEFT));
+
+        stage.changeScene(CustomStage.getDefaultSceneManager().getScene("addEmp"));
 
         stage.show();
 

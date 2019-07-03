@@ -7,19 +7,18 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="57.0" layoutY="55.0" prefHeight="30.0" prefWidth="78.0" text="Net salary" />
-      <TextField layoutX="133.0" layoutY="55.0" prefHeight="30.0" prefWidth="142.0" />
-      <ComboBox editable="true" layoutX="343.0" layoutY="58.0" prefWidth="180.0" visibleRowCount="2" />
-      <TableView layoutX="21.0" layoutY="113.0" prefHeight="272.0" prefWidth="559.0">
+      <TextField layoutX="133.0" layoutY="55.0" prefHeight="30.0" prefWidth="196.0" />
+      <ComboBox editable="true" layoutX="448.0" layoutY="57.0" prefHeight="26.0" prefWidth="242.0" visibleRowCount="2" />
+      <TableView layoutX="50.0" layoutY="135.0" prefHeight="417.0" prefWidth="700.0">
         <columns>
           <TableColumn prefWidth="55.20001220703125" text="Emp ID" />
-          <TableColumn prefWidth="134.4000244140625" text="Name" />
-            <TableColumn prefWidth="88.00006103515625" text="NIC" />
-            <TableColumn prefWidth="102.39996337890625" text="DOB" />
-            <TableColumn prefWidth="178.4000122070313" text="Address" />
+          <TableColumn prefWidth="157.60003662109375" text="Name" />
+            <TableColumn prefWidth="108.79998779296875" text="NIC" />
+            <TableColumn prefWidth="108.79998779296875" text="DOB" />
+            <TableColumn prefWidth="269.5999755859375" text="Address" />
         </columns>
       </TableView>
    </children>
